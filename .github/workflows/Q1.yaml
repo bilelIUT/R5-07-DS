@@ -20,7 +20,7 @@ jobs:
       - name: Commit and push archive file
         run: |
           git config --global user.name "bilelIUT"
-          git config --global user.email "bilelchriki2811@gmail.com"
-          git add Q1_archive_TOTO.txt
+          git config --global user.email "bilelenplus@gmail.com"
+          git add TOTO.txt Q1_archive_TOTO.txt
           git commit -m "Ajout de Q1_archive_TOTO.txt"
           git push
