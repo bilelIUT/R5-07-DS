@@ -1,26 +1,26 @@
-name: Archivage TOTO
+name: Q1 - Archive TOTO
 
-on: [push]
-
-permissions:
-  contents: write
+on:
+  push:
+    paths:
+      - 'TOTO.txt'
+      - '.github/workflows/Q1.yaml'
 
 jobs:
-  build:
+  archive:
     runs-on: ubuntu-latest
 
     steps:
-      - name: 🧾 Checkout repository
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: 🗓️ Créer ou mettre à jour rapport daté
-        run: |
-          TOTO.txt > Q1_archive_TOTO.txt
+      - name: Copy TOTO.txt to Q1_archive_TOTO.txt
+        run: cp TOTO.txt Q1_archive_TOTO.txt
 
-      - name: 🔄 Commit et push des fichiers générés
+      - name: Commit and push archive file
         run: |
-          git config --global user.name "bilelIUT"
-          git config --global user.email "bilelenplus@gmail.com"
-          git add TOTO.txt Q1_archive_TOTO.txt
-          git commit -m "Archivage TOTO.txt" || echo "Aucun changement à valider"
+          git config --global user.name "VotreNom"
+          git config --global user.email "votre.email@example.com"
+          git add Q1_archive_TOTO.txt
+          git commit -m "Ajout de Q1_archive_TOTO.txt"
           git push
