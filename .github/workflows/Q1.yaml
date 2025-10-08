@@ -1,15 +1,14 @@
 name: Q1 - Archive TOTO
 
-on:
-  push:
-    paths:
-      - 'TOTO.txt'
-      - '.github/workflows/Q1.yaml'
+on: [push]
+
+permissions:
+  contents: write
 
 jobs:
-  archive:
+  build:
     runs-on: ubuntu-latest
-
+    
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
