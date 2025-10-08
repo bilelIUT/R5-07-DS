@@ -1,0 +1,29 @@
+name: Q3
+
+on: [push]
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Copie Q3.java + nom et prenom
+        run: |
+          echo "Nom : Chriki" > Q3_archive_TOTO.txt
+          echo "Prénom : Mohamed-Bilel" >> Q3_archive_TOTO.txt
+          echo "Contenu Q3.java :" >> Q3_archive_TOTO.txt
+          cp Q3.java >> Q3_archive_TOTO.txt
+
+      - name: Commit and push archive file
+        run: |
+          git config --global user.name "bilelIUT"
+          git config --global user.email "bilelenplus@gmail.com"
+          git add Q3_archive_TOTO.txt
+          git commit -m "Ajout de Q2_archive_TOTO.txt"
+          git push
