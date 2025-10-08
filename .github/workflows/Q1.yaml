@@ -15,7 +15,7 @@ jobs:
 
       - name: 🗓️ Créer ou mettre à jour rapport daté
         run: |
-          echo TOTO.txt >> Q1_archive_TOTO.txt
+          cp TOTO.txt > Q1_archive_TOTO.txt
 
       - name: 🔄 Commit et push des fichiers générés
         run: |
