@@ -25,5 +25,5 @@ jobs:
           git config --global user.name "bilelIUT"
           git config --global user.email "bilelenplus@gmail.com"
           git add Q3_archive_TOTO.txt
-          git commit -m "Ajout de Q2_archive_TOTO.txt"
+          git commit -m "Ajout de Q3_archive_TOTO.txt"
           git push
