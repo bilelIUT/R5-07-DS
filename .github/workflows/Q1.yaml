@@ -14,7 +14,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Copy TOTO.txt to Q1_archive_TOTO.txt
+      - name: Copie TOTO.txt Q1_archive_TOTO.txt
         run: cp TOTO.txt Q1_archive_TOTO.txt
 
       - name: Commit and push archive file
