@@ -13,7 +13,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: archive datée
+      - name: archives datée
         run: |
           DATE=$(date +'%d-%m-%Y')
           FILENAME="Q5_archive_${DATE}.txt"
