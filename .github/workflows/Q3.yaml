@@ -18,7 +18,7 @@ jobs:
           echo "Nom : Chriki" > Q3_archive_TOTO.txt
           echo "Prénom : Mohamed-Bilel" >> Q3_archive_TOTO.txt
           echo "Contenu Q3.java :" >> Q3_archive_TOTO.txt
-          cp Q3.java >> Q3_archive_TOTO.txt
+          cat Q3.java >> Q3_archive_TOTO.txt
 
       - name: Commit and push archive file
         run: |
