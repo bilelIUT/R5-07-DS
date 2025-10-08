@@ -4,6 +4,7 @@ public class Q3 {
             System.out.println("Usage : java Q3 <N>");
             return;
         }
+        
         int N = Integer.parseInt(args[0]);
         for (int i = 0; i <= N; i++) {
             System.out.print(i);
