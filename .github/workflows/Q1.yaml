@@ -1,0 +1,26 @@
+name: Archivage TOTO
+
+on: [push]
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 🧾 Checkout repository
+        uses: actions/checkout@v4
+
+      - name: 🗓️ Créer ou mettre à jour rapport daté
+        run: |
+          echo TOTO.txt > Q1_archive_TOTO.txt
+
+      - name: 🔄 Commit et push des fichiers générés
+        run: |
+          git config --global user.name "bilelIUT"
+          git config --global user.email "bilelenplus@gmail.com"
+          git add TOTO.txt Q1_archive_TOTO.txt
+          git commit -m "Archivage TOTO.txt" || echo "Aucun changement à valider"
+          git push
