@@ -1,0 +1,34 @@
+name: Q2
+
+on: [push]
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Copie TOTO.txt et taille + nom prenom + date exe
+        run: |
+          echo "Nom : Chriki" > Q2_archive_TOTO.txt
+          echo "Prénom : Mohamed-Bilel" >> Q2_archive_TOTO.txt
+          echo "Date et heure : $(date)" >> Q2_archive_TOTO.txt
+          echo "" >> Q2_archive_TOTO.txt
+          echo "Contenu TOTO.txt :" >> Q2_archive_TOTO.txt
+          cat TOTO.txt >> Q2_archive_TOTO.txt
+          echo "" >> Q2_archive_TOTO.txt
+          echo "Taille TOTO.txt :" >> Q2_archive_TOTO.txt
+          wc -c TOTO.txt >> Q2_archive_TOTO.txt
+
+      - name: Commit and push archive file
+        run: |
+          git config --global user.name "bilelIUT"
+          git config --global user.email "bilelenplus@gmail.com"
+          git add TOTO.txt Q1_archive_TOTO.txt
+          git commit -m "Ajout de Q1_archive_TOTO.txt"
+          git push
