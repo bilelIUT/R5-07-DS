@@ -15,15 +15,16 @@ jobs:
 
       - name: Copie Q3.java + nom et prenom
         run: |
-          echo "Nom : Chriki" > Q3_archive_TOTO.txt
-          echo "Prénom : Mohamed-Bilel" >> Q3_archive_TOTO.txt
-          echo "Contenu Q3.java :" >> Q3_archive_TOTO.txt
-          cat Q3.java >> Q3_archive_TOTO.txt
+          echo "Nom : Chriki" > Q3_archive_java.txt
+          echo "Prénom : Mohamed-Bilel" >> Q3_archive_java.txt
+          echo "" >> Q3_archive_java.txt
+          echo "Contenu Q3.java :" >> Q3_archive_java.txt
+          cat Q3.java >> Q3_archive_java.txt
 
       - name: Commit and push archive file
         run: |
           git config --global user.name "bilelIUT"
           git config --global user.email "bilelenplus@gmail.com"
-          git add Q3_archive_TOTO.txt
-          git commit -m "Ajout de Q3_archive_TOTO.txt"
+          git add Q3_archive_java.txt
+          git commit -m "Ajout de Q3_archive_java.txt"
           git push
