@@ -1,0 +1,31 @@
+name: Q5
+
+on: [push]
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: archive datée
+        run: |
+          DATE=$(date +'%d-%m-%Y')
+          FILENAME="Q5_archive_${DATE}.txt"
+          echo "Nom : CHRIKI" > $FILENAME
+          echo "Prénom : Mohamed-Bilel" >> $FILENAME
+          echo "" >> $FILENAME
+          cat Q5.java >> $FILENAME
+
+      - name: Commit and push
+        run: |
+          git config --global user.name "bilelIUT"
+          git config --global user.email "bilelenplus@gmail.com"
+          git add Q5_archive_*.txt
+          git commit -m "Ajout de l’archive Q5 avec date"
+          git push
