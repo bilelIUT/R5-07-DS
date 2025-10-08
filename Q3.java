@@ -1,11 +1,12 @@
 public class Q3 {
-    public Q3(int n) {
-        for(int i=0;i<=n;i++){
-            System.out.println(i);
+    public static void main(String[] args) {
+        if (args.length < 1) {
+            System.out.println("Usage : java Q3 <N>");
+            return;
         }
-    }
-
-    public static void main(String[] a){
-        new Q3(10);
+        int N = Integer.parseInt(args[0]);
+        for (int i = 0; i <= N; i++) {
+            System.out.print(i);
+        }
     }
 }
