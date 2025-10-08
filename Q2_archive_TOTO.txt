@@ -1,0 +1,10 @@
+Nom : Chriki
+Prénom : Mohamed-Bilel
+Date et heure : Wed Oct  8 14:04:08 UTC 2025
+
+Contenu TOTO.txt :
+TOTO test
+TOTO
+
+Taille TOTO.txt :
+15 TOTO.txt
